@@ -216,6 +216,9 @@ namespaces: ""
 # only namespaces that are excluded in namespaces-denylist will be used.
 namespacesDenylist: ""
 
+# Collecting metrics only from the release namespace
+releaseNamespace: false
+
 ## Override the deployment namespace
 ##
 namespaceOverride: ""

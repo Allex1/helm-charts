@@ -80,6 +80,9 @@ spec:
         {{- if .Values.namespacesDenylist }}
         - --namespaces-denylist={{ tpl (.Values.namespacesDenylist | join ",") $ }}
         {{- end }}
+        {{- if .Values.releaseNamespace }}
+        - --namespaces={{ template "kube-state-metrics.namespace" . }}
+        {{- end }}
         {{- if .Values.autosharding.enabled }}
         - --pod=$(POD_NAME)
         - --pod-namespace=$(POD_NAMESPACE)
