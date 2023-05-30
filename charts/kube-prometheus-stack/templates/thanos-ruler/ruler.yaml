@@ -50,7 +50,7 @@ spec:
 {{- end }}
 {{- if .Values.thanosRuler.thanosRulerSpec.ruleNamespaceSelector }}
   ruleNamespaceSelector:
-{{ toYaml .Values.thanosRuler.thanosRulerSpec.ruleNamespaceSelector | indent 4 }}
+{{ tpl (toYaml .Values.thanosRuler.thanosRulerSpec.ruleNamespaceSelector | indent 4) . }}
 {{ else }}
   ruleNamespaceSelector: {}
 {{- end }}

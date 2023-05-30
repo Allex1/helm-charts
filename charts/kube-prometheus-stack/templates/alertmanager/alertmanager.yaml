@@ -65,7 +65,7 @@ spec:
 {{- end }}
 {{- if .Values.alertmanager.alertmanagerSpec.alertmanagerConfigNamespaceSelector }}
   alertmanagerConfigNamespaceSelector:
-{{ toYaml .Values.alertmanager.alertmanagerSpec.alertmanagerConfigNamespaceSelector | indent 4}}
+{{ tpl (toYaml .Values.alertmanager.alertmanagerSpec.alertmanagerConfigNamespaceSelector | indent 4) . }}
 {{ else }}
   alertmanagerConfigNamespaceSelector: {}
 {{- end }}
