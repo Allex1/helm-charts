@@ -156,7 +156,7 @@ spec:
 {{- end }}
 {{- if .Values.prometheus.prometheusSpec.serviceMonitorNamespaceSelector }}
   serviceMonitorNamespaceSelector:
-{{ toYaml .Values.prometheus.prometheusSpec.serviceMonitorNamespaceSelector | indent 4 }}
+{{ tpl (toYaml .Values.prometheus.prometheusSpec.serviceMonitorNamespaceSelector | indent 4) . }}
 {{ else }}
   serviceMonitorNamespaceSelector: {}
 {{- end }}
@@ -172,7 +172,7 @@ spec:
 {{- end }}
 {{- if .Values.prometheus.prometheusSpec.podMonitorNamespaceSelector }}
   podMonitorNamespaceSelector:
-{{ toYaml .Values.prometheus.prometheusSpec.podMonitorNamespaceSelector | indent 4 }}
+{{ tpl (toYaml .Values.prometheus.prometheusSpec.podMonitorNamespaceSelector | indent 4) . }}
 {{ else }}
   podMonitorNamespaceSelector: {}
 {{- end }}
@@ -188,7 +188,7 @@ spec:
 {{- end }}
 {{- if .Values.prometheus.prometheusSpec.probeNamespaceSelector }}
   probeNamespaceSelector:
-{{ toYaml .Values.prometheus.prometheusSpec.probeNamespaceSelector | indent 4 }}
+{{ tpl (toYaml .Values.prometheus.prometheusSpec.probeNamespaceSelector | indent 4) . }}
 {{ else }}
   probeNamespaceSelector: {}
 {{- end }}
@@ -216,7 +216,7 @@ spec:
 {{- end }}
 {{- if .Values.prometheus.prometheusSpec.ruleNamespaceSelector }}
   ruleNamespaceSelector:
-{{ toYaml .Values.prometheus.prometheusSpec.ruleNamespaceSelector | indent 4 }}
+{{ tpl (toYaml .Values.prometheus.prometheusSpec.ruleNamespaceSelector | indent 4) . }}
 {{ else }}
   ruleNamespaceSelector: {}
 {{- end }}
